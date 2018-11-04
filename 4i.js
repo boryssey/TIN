@@ -11,4 +11,4 @@ function toCoins(amount, coins) {
   }
   return result;
 }
-console.log(toCoins(46, [25, 10, 5, 2, 1]));
+console.log("amount 46 can be converted to such coins " + toCoins(46, [25, 10, 5, 2, 1]));

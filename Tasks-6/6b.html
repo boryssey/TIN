@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>6b</title>
+</head>
+
+<body>
+  <div id="div1">
+  </div>
+  <script>
+    function createParagraph() {
+      let paragraph = document.createElement("p");
+      let div = document.getElementById('div1');
+      let text = document.createTextNode(
+        "Resolution possession discovered surrounded advantages has but few add. Yet walls times spoil put. Be it reserved contempt rendered smallest. Studied to passage it mention calling believe an. Get ten horrible remember pleasure two vicinity. Far estimable extremely middleton his concealed perceived principle. Any nay pleasure entrance prepared her."
+      )
+      paragraph.appendChild(text);
+      div.appendChild(paragraph);
+    }
+    setTimeout(createParagraph,5000);
+  </script>
+</body>
+
+</html>

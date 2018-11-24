@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<script src="6d.js"></script>
+<style media="screen">
+table {
+    border-collapse: collapse;
+    width: 15%;
+}
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+</style>
+<head>
+  <title>6d</title>
+</head>
+
+<body>
+  <form>
+    <p>
+      <input type="text" id="name" placeholder="Enter name">
+    </p>
+    <p>
+      <input type="text" id="surname" placeholder="Enter surname">
+    </p>
+    <p>
+      <input type="button" onclick="addRow()" value="Add">
+    </p>
+
+  <table id="myTable">
+    <tr>
+      <th>Name</th>
+      <th>Surname</th>
+    </tr>
+  </table>
+
+</body>
+</html>

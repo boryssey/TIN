@@ -24,25 +24,25 @@ function splitUrl(reqUrl) {
 let operators = {
   '/add': {
     op: '+',
-    calc: function(a, b){
+    calc: function(a, b) {
       return a + b;
     }
   },
   '/mul': {
     op: 'x',
-    calc: function(a, b){
+    calc: function(a, b) {
       return a * b;
     }
   },
   '/div': {
     op: '/',
-    calc: function(a, b){
+    calc: function(a, b) {
       return a / b;
     }
   },
   '/sub': {
     op: '-',
-    calc: function(a, b){
+    calc: function(a, b) {
       return a - b;
     }
   }
@@ -68,8 +68,7 @@ function validateQuery(urlSplitted) {
 }
 
 function calcQuery(query) {
-  if (query.valid === false) {
-  } else {
+  if (query.valid === false) {} else {
     return (query.value1 + ' ' + operators[query.operator].op + ' ' + query.value2 + ' = ' + (operators[query.operator]).calc(query.value1, query.value2));
   }
 }

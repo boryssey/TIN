@@ -25,7 +25,7 @@ function watchDir() {
   fs.watch(dirPath, {
     recursive: true
   }, (eventType, filename) => {
-    console.log(filename + ' was ' + eventType + 'd');
+    console.log(new Date().toLocaleTimeString() + ' ' + filename + ' was ' + eventType + 'd');
   });
 }
 watchDir();

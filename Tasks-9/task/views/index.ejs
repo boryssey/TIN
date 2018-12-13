@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        function handle() {
+            let formEl = document.getElementById('form');
+            let headers = new Headers();
+            headers.set('Content-Type', 'application/json');
+            let formData = {
+                val1: document.getElementById("val1").value,
+                val2: document.getElementById("val2").value,
+                operator: document.getElementById("operations").value
+            };
+            let data = JSON.stringify(formData);
+            let url = "http://localhost:3000/calc";
+            let request = new Request(url, {
+                method: "post",
+                headers,
+                body: data
+            });
+            let http_request = new XMLHttpRequest();
+            http_request.open("POST", "/calc", true);
+            http_request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            http_request.onreadystatechange = handleChanges;
+            http_request.send(data);
+            function handleChanges() {
+                if (http_request.readyState == 4) {
+                    if (http_request.status == 200) {
+                        let data = JSON.parse(http_request.response);
+                        let result = `${data}`;
+                        let p = document.getElementsByTagName("p")[0];
+                        p.textContent = result;
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Calculator </h2>
+    <form id="form">
+        <div>
+            <input type="number" id="val1" name="val1" placeholder="first number">
+            <input type="number" id="val2" name="val2" placeholder="second">
+            <select id="operations">
+                <option value="mul">Multiply</option>
+                <option value="div">Divide</option>
+                <option value="add">Add</option>
+                <option value="sub">Substract</option>
+            </select>
+            <input type="button" value="Calculate" onclick="handle()">
+        </div>
+    </form>
+    <p></p>
+</body>
+
+</html>
